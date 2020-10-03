@@ -17,7 +17,7 @@ import com.introid.instagram_firestore.models.User
 import kotlinx.android.synthetic.main.activity_posts.*
 
 const val TAG = "ProfileActivity"
-private const val EXTRA_USERNAME = "EXTRA_USERNAME"
+public const val EXTRA_USERNAME = "EXTRA_USERNAME"
 
 open class PostsActivity : AppCompatActivity() {
 
@@ -72,6 +72,11 @@ open class PostsActivity : AppCompatActivity() {
                 Log.d(TAG, "onCreate: Post : $post")
 
             }
+        }
+
+        fabCreate.setOnClickListener{
+            val intent = Intent(this, CreateActivity::class.java)
+            startActivity(intent)
         }
     }
 
